@@ -12,7 +12,7 @@ it is available locally.
 
 - Learning about
   - Server management
-  - CContainerization
+  - Containerization
   - CI/CD
   - Networking
 - Self upgrading system
@@ -26,13 +26,19 @@ it is available locally.
   - Let's encrypt secured TLS/HTTPS
 - Secured LAN communication between nodes
 - Easy to deploy/recreate, but no need for full automation
+- Declarative service description
 - Test driven development/deployment/roll back, health checks
+- Single sign on to secure all exposed services
 
 ## Resources
 
 ### erebe/personal-server
 
-https://github.com/erebe/personal-server
+[https://github.com/erebe/personal-server][erebe/personal-server]
 
 Ideas to use from here: GPG and SOPS secured secret
 management, Let's Encrypt, maybe more.
+
+[healthchecks.io]: https://healthchecks.io/
+[k9s]: https://k9scli.io/
+[erebe/personal-server]: https://github.com/erebe/personal-server
