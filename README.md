@@ -39,6 +39,15 @@ it is available locally.
 Ideas to use from here: GPG and SOPS secured secret
 management, Let's Encrypt, maybe more.
 
+## Contributing
+
+Please format commit messages according to .gitmessage.
+The easiest way is to set it as a template:
+
+```sh
+git config commit.template .gitmessage
+```
+
 [healthchecks.io]: https://healthchecks.io/
 [k9s]: https://k9scli.io/
 [erebe/personal-server]: https://github.com/erebe/personal-server
