@@ -48,6 +48,12 @@ The easiest way is to set it as a template:
 git config commit.template .gitmessage
 ```
 
+## References
+
+* [Healthchecks.io][healthchecks.io]
+* [k9s CLI][k9s]
+* [erebe's personal-server][erebe/personal-server]
+
 [healthchecks.io]: https://healthchecks.io/
 [k9s]: https://k9scli.io/
 [erebe/personal-server]: https://github.com/erebe/personal-server
