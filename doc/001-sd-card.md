@@ -25,7 +25,17 @@ wsl --mount <DiskPath> --partition <PartitionNumber> --type <Filesystem>
 ```
 
 ```sh
-sudo dd bs=4M if=2020-02-13-raspbian-buster-lite.img of=/dev/mmcblk0 conv=fsync
+RPOS_BASE_URL="https://downloads.raspberrypi.org/raspios_lite_arm64/images/" && \
+RPOS_DIR_URL="${RPOS_BASE_URL}$(curl --silent "${RPOS_BASE_URL}" | perl -lane 'm!a href="(raspios_lite_arm64-\d+-\d+-\d+/)"! && print $1' | sort | tail -1)" && \
+RPOS_COMPRESSED_FILE="$(curl --silent "${RPOS_DIR_URL}" | perl -lane 'm!a href="(\d{4}-\d{2}-\d{2}-raspios.*?arm64-lite.*?.xz)"! && print $1' | sort | tail -1)" && \
+curl --progress-bar --remote-name "${RPOS_DIR_URL}${RPOS_COMPRESSED_FILE}" --remote-name "${RPOS_DIR_URL}${RPOS_COMPRESSED_FILE}.sha256" && \
+( sha256sum -c "${RPOS_COMPRESSED_FILE}.sha256" || \
+    echo "Checksum failed!" >&2 ) && \
+( xz --decompress "${RPOS_COMPRESSED_FILE}" || \
+    echo "Decompress failed" >&2 ) && \
+RPOS_IMAGE_FILE="${RPOS_COMPRESSED_FILE%.*}" && \
+echo "Flashing ${RPOS_IMAGE_FILE} to SD card" >&2  && \
+sudo dd bs=4M if="${RPOS_IMAGE_FILE}" of="${SD_PARTITION}" conv=fsync
 ```
 
 ## References
