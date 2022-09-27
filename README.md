@@ -53,7 +53,9 @@ git config commit.template .gitmessage
 * [Healthchecks.io][healthchecks.io]
 * [k9s CLI][k9s]
 * [erebe's personal-server][erebe/personal-server]
+* [SD card flashing][sd-card-flashing]
 
 [healthchecks.io]: https://healthchecks.io/
 [k9s]: https://k9scli.io/
 [erebe/personal-server]: https://github.com/erebe/personal-server
+[sd-card-flashing]: https://www.pragmaticlinux.com/2020/06/setup-your-raspberry-pi-4-as-a-headless-server/
