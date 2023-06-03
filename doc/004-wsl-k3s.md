@@ -24,3 +24,10 @@ The K3S_TOKEN is stored by default at `/var/lib/rancher/k3s/server/node-token`.
 ```sh
 curl -sfL https://get.k3s.io | K3S_URL=https://X:6443 K3S_TOKEN="X" sh -
 ```
+
+## References
+
+UDP issue:
+https://github.com/microsoft/WSL/issues/6082
+https://github.com/microsoft/WSL/issues/8610#issuecomment-1197053685
+https://stackoverflow.com/questions/73264714/windows-host-cant-receive-udp-packets-from-wsl-2-guest
